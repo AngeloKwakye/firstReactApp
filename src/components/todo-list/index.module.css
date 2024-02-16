@@ -1,0 +1,9 @@
+.todocontainer{
+    position: absolute;
+    top: 200px;
+    left: 21%;
+    background-color: white;
+    padding: 20px;
+    width: 57.5%;
+    border-radius: 10px;
+}
