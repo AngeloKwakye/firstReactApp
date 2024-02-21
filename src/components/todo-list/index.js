@@ -1,20 +1,22 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+import { useState,useEffect } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import styles from "./index.module.css"
 
 
 function TodoList() {
 
-const [todos, setTodos] = React.useState([]);
+const [todos, setTodos] = useLocalStorage("TODO", []);
 
-
+/* 
     // let todos;
     function getTodos() {
-       let todos = JSON.parse(localStorage.getItem("TODO")) || [];
+       let todos = JSON.parse(localStorage.getItem("TODO_KEY")) || [];
             //Update React State
        setTodos(todos);
     }
 
-    React.useEffect(getTodos, []);
+    useEffect(getTodos, []); */
     return (
         <div className={styles.todocontainer}>
         <ul>
