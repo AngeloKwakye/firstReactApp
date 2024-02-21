@@ -1,7 +1,6 @@
 // import React, { useEffect } from "react";
-import { useState,useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
-import styles from "./index.module.css"
+import TodoItem from "../todo-item";
 
 
 function TodoList() {
@@ -18,13 +17,11 @@ const [todos, setTodos] = useLocalStorage("TODO", []);
 
     useEffect(getTodos, []); */
     return (
-        <div className={styles.todocontainer}>
-        <ul>
+        <ul className="list-group">
             {todos.map(function(todo, index){
-                return <li key={index}>{todo}</li>
+                return <TodoItem todo={todo} index={index}/>
             })}
         </ul>
-        </div>
     );
 }
 
