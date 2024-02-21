@@ -9,6 +9,8 @@ function TodoItem({index, todo}) {
             for={index}>
                 {todo}
             </label>
+            {/* Take home Assignment: Delete a single todo */}
+            <button className="btn btn-danger">Delete</button>
         </li>
     );
 }

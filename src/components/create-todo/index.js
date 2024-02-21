@@ -11,6 +11,13 @@ function CreateTodo() {
     // let todo;
     const [todo, setTodo] = useState("");
     // let me = [];
+
+    const saveTodos =() =>{
+        // save all todos
+        setTodos([...todos, todo]);
+        // wipe the input box
+        setTodo("");
+    }
      
     // function collectInput(event){
     //     // todo = event.target.value;
@@ -30,7 +37,10 @@ function CreateTodo() {
 
     return (
         <section className={styles.section}>
-            <input onChange={event => setTodo(event.target.value)} className={styles.input} placeholder="Start typing..."/>
+            <input 
+            value={todo}
+            onKeyDown={event => event.key == "Enter" && saveTodos()}
+            onChange={event => setTodo(event.target.value)} className={styles.input} placeholder="Start typing..."/>
             <button onClick={() => setTodos([...todos, todo])} className={styles.button}>Create</button>
         </section>
     )
